@@ -34,10 +34,12 @@ while play_game:
         choix = int(input("Que voulez vous faire?\n 1:comabtre\n 2:contourner et aller a une autre porte\n 3:afficher regle\n 4:quitter\n \nentrez votre choix: "))
 
     elif nbr_victoir_consecutive % 3 == 0:
-        combat_boss = True
-        force_monstr = random.randint(7, 12)
-        niveau_adv += 1
-        nbr_combat += 1
+        if showed_rules is False:
+
+            combat_boss = True
+            force_monstr = random.randint(7, 12)
+            niveau_adv += 1
+            nbr_combat += 1
         print(f"combat", nbr_combat, ": vous avez", nbr_victoire, "victoire et", nbr_defaite, "defaite\n")
         print(f"VOUS RENCONTREZ LE BOSS DE FORCE ", force_monstr, "\n")
         print(f"vous avez", niveau_vie, "vie \n")
